@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.875" name="DB">
+  <DataContextMoniker Name="/DBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c53b5c8a-d1f2-4bf9-9208-af253d367156" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBDataContext/tbObj" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0054bf83-44ef-4034-9547-5f041d231e0c" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="237fc4ef-feed-4585-a7d6-018dacc2bbe1" absoluteBounds="3.5, 3, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/DBDataContext/tsInstruction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ff6d77a-185e-4bcd-a5e5-90b5164570b4" absoluteBounds="3.515, 3.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7457ced-fd10-40d6-95de-f7602cd4f63d" absoluteBounds="0.75, 3.5, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/DBDataContext/tsSimplifiedStrategiesObject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3a9a8dd-7678-45e7-b2d7-131e7a36c8b4" absoluteBounds="0.765, 3.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.77005126953125); (3.5 : 4.77005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/tsSimplifiedStrategiesObject/tsSimplifiedStrategiesObject_tsInstruction" />
+      <nodes>
+        <classShapeMoniker Id="e7457ced-fd10-40d6-95de-f7602cd4f63d" />
+        <classShapeMoniker Id="237fc4ef-feed-4585-a7d6-018dacc2bbe1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="87ca8af1-6bec-4f15-a9cd-75c1bcf21afd" absoluteBounds="6.75, 3, 2, 7.1553369140625">
+      <DataClassMoniker Name="/DBDataContext/tbDateLineExt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a843f5ca-bf64-446e-9cc9-87bd989abf7d" absoluteBounds="6.765, 3.46, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e9440fa8-07b1-4023-afc3-641320947334" absoluteBounds="1.875, 8.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DBDataContext/tbDnWindow" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5244667a-e155-4946-b6c2-872862c17bd3" absoluteBounds="1.8900000000000001, 8.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e101f8c2-26b6-4e7f-90a2-9afd3a5cee75" absoluteBounds="4.25, 8.375, 2, 4.2708154296875">
+      <DataClassMoniker Name="/DBDataContext/tbPairBingoH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c42ab14-84ff-4e7b-b3b6-75405012c47b" absoluteBounds="4.265, 8.835, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

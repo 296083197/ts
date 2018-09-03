@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="trader" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP850G1\TRADER;Initial Catalog=trader;Integrated Security=True" SettingsObjectName="ts.Properties.Settings" SettingsPropertyName="traderConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbObj" Member="tbObjs">
+    <Type Name="tbObj">
+      <Column Name="code" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tsInstruction" Member="tsInstructions">
+    <Type Name="tsInstruction">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idForObj" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="priceAsc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="priceDesc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="priceType" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="category" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="state" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="generateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="resultTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="desc2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tsSimplifiedStrategiesObject_tsInstruction" Member="tsSimplifiedStrategiesObject" ThisKey="idForObj" OtherKey="id" Type="tsSimplifiedStrategiesObject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tsSimplifiedStrategiesObject" Member="tsSimplifiedStrategiesObjects">
+    <Type Name="tsSimplifiedStrategiesObject">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idForStrategies" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="createTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="direction" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="planQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lastStopPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="state" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tsSimplifiedStrategiesObject_tsInstruction" Member="tsInstructions" ThisKey="id" OtherKey="idForObj" Type="tsInstruction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbDateLineExt" Member="tbDateLineExts">
+    <Type Name="tbDateLineExt">
+      <Column Name="code" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="O" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="H" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="L" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="C" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="V" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="vm" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="lastC" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ma5" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ma10" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ma20" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ma60" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="atr" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="atr10" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ema12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ema26" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dif" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dea" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="macd" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="k" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="d" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="j" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rsi6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rsi12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rsi24" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ma30" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ma250" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EPS_lastYear" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EPS_lastQ4" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EPS_thisYear" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Flow_of_equity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Total_share_capital" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbDnWindows" Member="tbDnWindows">
+    <Type Name="tbDnWindow">
+      <Column Name="code" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="continuedN" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="UpWindowMinL" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DnWindowMaxH" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="lastSize" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="allSize" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="last2CurrentC" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="all2CurrentC" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbPairBingoH" Member="tbPairBingoHs">
+    <Type Name="tbPairBingoH">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="peakOrValley" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="date1" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="price1" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="date2" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="price2" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="cycle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slope" Type="System.Decimal" DbType="Decimal(20,10)" CanBeNull="true" />
+      <Column Name="cycleDate2ToCurrent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="derivateCurrentPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="currentPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="validCrossCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="testCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="currentH" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="currentL" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="crossCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cycleFrom1stTest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spAddSSOAndInstruction" Method="spAddSSOAndInstruction">
+    <Parameter Name="sqlSSO" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="sqlInstruction" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="idSSO" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="idInstruction" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
